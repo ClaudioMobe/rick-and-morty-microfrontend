@@ -1,0 +1,16 @@
+services:
+  shell:
+    build: ./mf-shell
+    ports: ["3000:3000"]
+    environment:
+      - REMOTE_CHARACTERS=http://characters:3001/remoteEntry.js
+      - REMOTE_DETAIL=http://character_detail:3002/remoteEntry.js
+    depends_on: [characters, character_detail]
+
+  characters:
+    build: ./mf-characters
+    ports: ["3001:3001"]
+
+  character_detail:
+    build: ./mf-character-detail
+    ports: ["3002:3002"]
