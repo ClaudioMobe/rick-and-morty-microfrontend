@@ -3,8 +3,8 @@ services:
     build: ./mf-shell
     ports: ["3000:3000"]
     environment:
-      - REMOTE_CHARACTERS=http://characters:3001/remoteEntry.js
-      - REMOTE_DETAIL=http://character_detail:3002/remoteEntry.js
+      - REMOTE_CHARACTERS=http://localhost:3001/remoteEntry.js
+      - REMOTE_DETAIL=http://localhost:3002/remoteEntry.js
     depends_on: [characters, character_detail]
 
   characters:
